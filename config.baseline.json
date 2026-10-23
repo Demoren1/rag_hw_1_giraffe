@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "bm25_one_call_local_pilot",
+  "runtime_status": "unofficial_local_pilot_no_runtime_json",
+  "tokenizer": {
+    "local_source": "models/Qwen3.5-4B",
+    "hub_id": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  "retrieval": {
+    "k1": 1.2,
+    "b": 0.75,
+    "candidate_count": 24,
+    "context_blocks": 6,
+    "section_copies": 2,
+    "max_input_tokens": 5600
+  },
+  "generation": {
+    "temperature": 0,
+    "max_tokens": 1024,
+    "chat_template_kwargs": {"enable_thinking": false}
+  },
+  "limits": {
+    "max_calls": 4,
+    "total_input_tokens": 16384,
+    "total_output_tokens": 4096,
+    "request_total_tokens": 8192
+  },
+  "http": {"timeout_seconds": 180}
+}

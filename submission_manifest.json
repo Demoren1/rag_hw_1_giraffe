@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "dataset_kind": "local_pilot_not_official_dev",
+  "author": "Уденеев Александр Владимирович",
+  "group": "Б05-602",
+  "source_questions_sha256": "e6f3b843d61262b23cf3d03aea304a77584379d4ffd85c391ac47e998b4a673f",
+  "source_corpus_sha256": "084440164f7bca9cc6720de27bdbdc51944e643f4c9f5190f01231e51a3b098d",
+  "source_answers_sha256": "77f8da6d3801f4cb3a9fb9f86700a3309dbf267874932b4c349384f32eb1f761",
+  "source_full_trace_sha256": "c6810535060ed2335b666e7c0a8d84f4bfdc8be306e6e16e6929c32acca046a9",
+  "answer_records": 15,
+  "llm_calls": 30,
+  "answers_modified_by_audit": false,
+  "trace_export": "All original metered calls retained; request messages, source text and raw model responses remain in the ignored full trace.",
+  "official_materials_missing": [
+    "corpus.jsonl",
+    "dev_questions.jsonl",
+    "dev_gold.jsonl",
+    "runtime.json",
+    "official evaluator and baseline"
+  ],
+  "audit_scope": "manual_source_and_math_review_not_official_scoring",
+  "files_sha256": {
+    "config.json": "49812650b4b62f3e261c89c9274d78261d5665fbc934a73bb71a5ecfd74b14d9",
+    "dev_answers.jsonl": "77f8da6d3801f4cb3a9fb9f86700a3309dbf267874932b4c349384f32eb1f761",
+    "dev_trace.jsonl": "f697bf8121ac2362966c0f99c9444c1f0691f8cbf857587369eae2b420c73c85",
+    "own_questions.jsonl": "35cfc67d6c5bebe39590dc01934409c7e9b738113f2eeb4058144b49fa2efba2",
+    "own_gold.jsonl": "fc03d459d2f96439bb24ec1a3f255fbc124e751004f29fa2a8338a701c297f3e",
+    "docs/citation_audit.jsonl": "dab5d5ee98f90104acabacc39317da8bad67f9314f962effd1e399933e214ae3",
+    "docs/citation_audit.md": "90dd9e172bda97a2f96ba65279b2bb93794f39c4e308f29edef72773eb1ff479",
+    "report.md": "e31bde422c5dad6850767dbda50687b3643a390e5fc7d13faedb4e29ba90c810",
+    "experiments.csv": "d1c3c0e41823c40ece4a084aeeb5ee81b74dc432e70cc43b61cef94607600f79",
+    "README.md": "4126af9f6a35b389268a1e27d762d4c2490cd595399f2119b33ef30180a642c4",
+    "requirements.txt": "015e791c7d085087738dc55c10136f77b79a6931922b3ecc18a4b24e648b6330",
+    "docs/own_questions_notes.md": "259facaa27ab27f69f6551b0bd28b4f29f2b7783cf653cdae32829242d6044be"
+  }
+}

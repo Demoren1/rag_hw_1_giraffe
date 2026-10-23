@@ -1,0 +1,28 @@
+# Local source documents and generated pilot data.
+*.pdf
+/local_data/
+/models/
+/index/
+/tmp/
+/.cache/
+
+# Large model assets and logs outside their usual directories.
+*.safetensors
+*.onnx
+*.onnx_data
+*.gguf
+*.ggml
+*.pt
+*.pth
+*.log
+
+# Local environments, caches, and credentials.
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.key

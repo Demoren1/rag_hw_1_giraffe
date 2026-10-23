@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "name": "ablation_one_pass_v1",
+  "pipeline": "hybrid_evidence",
+  "runtime_status": "unofficial_local_pilot_no_runtime_json",
+  "tokenizer": {
+    "local_source": "models/Qwen3.5-4B",
+    "hub_id": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  "embedding": {
+    "local_source": "models/embeddinggemma-300m-onnx",
+    "hub_id": "onnx-community/embeddinggemma-300m-ONNX",
+    "revision": "5090578d9565bb06545b4552f76e6bc2c93e4a66",
+    "model_file": "onnx/model_quantized.onnx",
+    "parameters": 308000000,
+    "dimensions": 768,
+    "provider": "CPUExecutionProvider",
+    "threads": 6,
+    "batch_size": 4,
+    "window_tokens": 700,
+    "overlap_tokens": 80,
+    "max_length": 1024
+  },
+  "retrieval": {
+    "k1": 1.2,
+    "b": 0.75,
+    "candidate_count": 60,
+    "dense_candidates": 60,
+    "rrf_k": 60,
+    "seed_blocks": 5,
+    "context_blocks": 10,
+    "section_copies": 2,
+    "max_input_tokens": 5600,
+    "neighbors": true,
+    "max_seeds_per_page": 2
+  },
+  "generation": {
+    "temperature": 0,
+    "max_tokens": 1024,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "limits": {
+    "max_calls": 4,
+    "total_input_tokens": 16384,
+    "total_output_tokens": 4096,
+    "request_total_tokens": 8192
+  },
+  "http": {
+    "timeout_seconds": 180
+  },
+  "experiment": {
+    "retrieval_mode": "hybrid",
+    "evidence_pass": false
+  }
+}
