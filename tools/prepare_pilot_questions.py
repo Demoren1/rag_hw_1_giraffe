@@ -149,6 +149,10 @@ def main() -> None:
     )
     parser.add_argument("--source", type=Path, default=SOURCE_PATH)
     parser.add_argument("--output", type=Path, default=PILOT_DIR)
+    parser.add_argument(
+        "--dev-output", type=Path,
+        help="Also export dev_questions.jsonl and page-only dev_gold.jsonl.",
+    )
     args = parser.parse_args()
 
     source_path = args.source.resolve()
@@ -174,6 +178,11 @@ def main() -> None:
     write_jsonl(gold_path, gold)
     print(f"Wrote {len(questions)} questions to {questions_path}")
     print(f"Wrote {len(gold)} page-only gold records to {gold_path}")
+    if args.dev_output is not None:
+        dev_dir = args.dev_output.resolve()
+        write_jsonl(dev_dir / "dev_questions.jsonl", questions)
+        write_jsonl(dev_dir / "dev_gold.jsonl", gold)
+        print(f"Exported dev questions and page-only gold to {dev_dir}")
 
 
 if __name__ == "__main__":

@@ -27,6 +27,9 @@ def main() -> None:
     parser.add_argument("--corpus", type=Path, required=True)
     args = parser.parse_args()
     questions = {q["id"]: q for q in question_records(args.questions)}
+    published_questions = sha256_file(ROOT / "dev_questions.jsonl")
+    if published_questions != sha256_file(args.questions):
+        raise ValueError("Published dev questions differ from the run input")
     documents = read_jsonl(args.corpus)
     source_answers = args.run / "answers.jsonl"
     source_trace = args.run / "trace.jsonl"
@@ -99,18 +102,20 @@ def main() -> None:
             "All original metered calls retained; request messages, source "
             "text and raw model responses remain in the ignored full trace."
         ),
-        "official_materials_missing": [
-            "corpus.jsonl", "dev_questions.jsonl", "dev_gold.jsonl",
-            "runtime.json", "official evaluator and baseline",
-        ],
+        "data_preparation": "tools/prepare_data.py",
+        "runtime_configuration": "config.json; runtime.json is not read",
+        "gold_scope": "answer_sets_and_reference_pages_not_citation_f1",
         "audit_scope": "manual_source_and_math_review_not_official_scoring",
         "files_sha256": {
             name: sha256_file(ROOT / name) for name in (
                 "config.json", "dev_answers.jsonl", "dev_trace.jsonl",
+                "dev_questions.jsonl", "dev_gold.jsonl",
                 "own_questions.jsonl", "own_gold.jsonl",
                 "docs/citation_audit.jsonl", "docs/citation_audit.md",
                 "report.md",
                 "experiments.csv", "README.md", "requirements.txt",
+                "requirements-pdf.txt", "tools/prepare_data.py",
+                "tools/prepare_pilot_questions.py", "docs/reproduction.md",
                 "docs/own_questions_notes.md",
             )
         },

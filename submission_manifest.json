@@ -11,26 +11,28 @@
   "llm_calls": 30,
   "answers_modified_by_audit": false,
   "trace_export": "All original metered calls retained; request messages, source text and raw model responses remain in the ignored full trace.",
-  "official_materials_missing": [
-    "corpus.jsonl",
-    "dev_questions.jsonl",
-    "dev_gold.jsonl",
-    "runtime.json",
-    "official evaluator and baseline"
-  ],
+  "data_preparation": "tools/prepare_data.py",
+  "runtime_configuration": "config.json; runtime.json is not read",
+  "gold_scope": "answer_sets_and_reference_pages_not_citation_f1",
   "audit_scope": "manual_source_and_math_review_not_official_scoring",
   "files_sha256": {
     "config.json": "49812650b4b62f3e261c89c9274d78261d5665fbc934a73bb71a5ecfd74b14d9",
     "dev_answers.jsonl": "77f8da6d3801f4cb3a9fb9f86700a3309dbf267874932b4c349384f32eb1f761",
     "dev_trace.jsonl": "f697bf8121ac2362966c0f99c9444c1f0691f8cbf857587369eae2b420c73c85",
+    "dev_questions.jsonl": "e6f3b843d61262b23cf3d03aea304a77584379d4ffd85c391ac47e998b4a673f",
+    "dev_gold.jsonl": "eeba9098ac791b6c163143a39b0bdec269df9771bd8beb5bdc766fbebc89d83d",
     "own_questions.jsonl": "35cfc67d6c5bebe39590dc01934409c7e9b738113f2eeb4058144b49fa2efba2",
     "own_gold.jsonl": "fc03d459d2f96439bb24ec1a3f255fbc124e751004f29fa2a8338a701c297f3e",
     "docs/citation_audit.jsonl": "dab5d5ee98f90104acabacc39317da8bad67f9314f962effd1e399933e214ae3",
     "docs/citation_audit.md": "90dd9e172bda97a2f96ba65279b2bb93794f39c4e308f29edef72773eb1ff479",
-    "report.md": "f66cc55306b3e9dd0331b4db2d489718e42213c5a247847ada1fddf453a06a20",
+    "report.md": "08e849738bf6f806d92980d590454cbd8ffd45325a97b84f5678120cc151f530",
     "experiments.csv": "d1c3c0e41823c40ece4a084aeeb5ee81b74dc432e70cc43b61cef94607600f79",
-    "README.md": "fa9311780f2e0c91d6d29f93b5e5c77153f105eaec5b908f1d724e282602d59b",
+    "README.md": "afa15ab89e7d5fa4e0ed659401dbf81c5a78ee2c56ef7f19503fb5952aac9c11",
     "requirements.txt": "015e791c7d085087738dc55c10136f77b79a6931922b3ecc18a4b24e648b6330",
+    "requirements-pdf.txt": "b5b6600ab9475f88c79a9df1314cfad5f61dbdf2df1a3e867c04586bd0af258f",
+    "tools/prepare_data.py": "2b114475e3c83761bc24c0486e8fc31a707bbaf963b9be6565998a272124c6dd",
+    "tools/prepare_pilot_questions.py": "08858ce7212c1a44401dd0fdd073abc51f8cdc347906ac7b6539b24ac9958474",
+    "docs/reproduction.md": "a5fa6a5ea72a64a026a1d97c6482b9d8de3d4ae94e355d70523093dbdd78cbd5",
     "docs/own_questions_notes.md": "259facaa27ab27f69f6551b0bd28b4f29f2b7783cf653cdae32829242d6044be"
   }
 }
